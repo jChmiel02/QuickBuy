@@ -1,0 +1,113 @@
+$primary-color: #007bff;
+$secondary-color: #0056b3;
+$background-color: #f4f7f9;
+$text-color: #333;
+$card-background: #fff;
+$card-border: #e0e0e0;
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: $background-color;
+    color: $text-color;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.login-header {
+    background: $card-background;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $text-color;
+    text-decoration: none;
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: $secondary-color;
+    }
+}
+
+.login-content {
+    flex: 1;
+    padding: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.login-form {
+    background: $card-background;
+    padding: 20px;
+    border: 1px solid $card-border;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid $card-border;
+        border-radius: 4px;
+    }
+}
+
+.login-btn {
+    background: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: $secondary-color;
+    }
+}

@@ -10,6 +10,9 @@ const ItemPage = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
+    const [city, setCity] = useState("");
+    const [category, setCategory] = useState("");
+
 
     const navigate = useNavigate();
 
@@ -44,9 +47,12 @@ const ItemPage = () => {
             description,
             price: parseFloat(price),
             sellerId: parseInt(sellerId, 10),
+            city,
+            category,
             isSold: false,
             createdAt: new Date().toISOString(),
         };
+
 
         try {
             const response = await fetch("https://localhost:7176/Item/CreateItem", {
@@ -153,6 +159,25 @@ const ItemPage = () => {
                                 required
                             />
                         </div>
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                placeholder="Miasto"
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="input-group">
+                            <input
+                                type="text"
+                                placeholder="Kategoria"
+                                value={category}
+                                onChange={(e) => setCategory(e.target.value)}
+                                required
+                            />
+                        </div>
+
                         <button type="submit" className="create-btn">
                             Dodaj przedmiot
                         </button>
@@ -169,6 +194,9 @@ const ItemPage = () => {
                                 <p>
                                     <strong>Cena:</strong> {Number(item.price).toFixed(2)} PLN
                                 </p>
+                                <p><strong>Miasto:</strong> {item.city}</p>
+                                <p><strong>Kategoria:</strong> {item.category}</p>
+
                                 <p>
                                     <strong>Status:</strong>{" "}
                                     {item.isSold ? "Sprzedany" : "Dostępny"}

@@ -26,7 +26,9 @@ namespace QuickBuy.Automapper
                 .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
                 .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
-                .ForMember(dest => dest.SellerId, opt => opt.MapFrom(src => src.SellerId));
+                .ForMember(dest => dest.SellerId, opt => opt.MapFrom(src => src.SellerId))
+                .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.City))
+                .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category));
 
             CreateMap<ItemDto, Item>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
@@ -34,6 +36,8 @@ namespace QuickBuy.Automapper
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))
                 .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
                 .ForMember(dest => dest.SellerId, opt => opt.MapFrom(src => src.SellerId))
+                .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.City))
+                .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category))
                 .ForMember(dest => dest.Seller, opt => opt.Ignore());
 
             CreateMap<Transaction, TransactionDto>()

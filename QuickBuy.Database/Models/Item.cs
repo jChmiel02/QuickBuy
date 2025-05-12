@@ -16,8 +16,10 @@ namespace QuickBuy.Database.Models
         public User Seller { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool IsSold { get; set; }
-
+        public string City { get; set; }
+        public string Category { get; set; } 
         public ICollection<Chat> Chats { get; set; }
         public Transaction Transaction { get; set; }
     }
+
 }

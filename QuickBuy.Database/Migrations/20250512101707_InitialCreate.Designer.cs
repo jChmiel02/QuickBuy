@@ -12,7 +12,7 @@ using QuickBuy.Database.DbContext;
 namespace QuickBuy.Database.Migrations
 {
     [DbContext(typeof(QuickBuyDbContext))]
-    [Migration("20250509084322_InitialCreate")]
+    [Migration("20250512101707_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -63,6 +63,16 @@ namespace QuickBuy.Database.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");

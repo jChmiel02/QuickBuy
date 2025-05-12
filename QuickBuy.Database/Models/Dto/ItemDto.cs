@@ -18,6 +18,12 @@ namespace QuickBuy.Database.Models.Dto
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero.")]
         public decimal Price { get; set; }
 
+        [Required(ErrorMessage = "City is required.")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Category is required.")]
+        public string Category { get; set; }
+
         [Required(ErrorMessage = "Seller ID is required.")]
         public int SellerId { get; set; }
 
@@ -39,6 +45,12 @@ namespace QuickBuy.Database.Models.Dto
         [Required(ErrorMessage = "Price is required.")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero.")]
         public decimal Price { get; set; }
+
+        [Required(ErrorMessage = "City is required.")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Category is required.")]
+        public string Category { get; set; }
 
         [Required(ErrorMessage = "Seller ID is required.")]
         public int SellerId { get; set; }

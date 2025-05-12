@@ -57,6 +57,13 @@ namespace QuickBuy.Database.DbContext
             modelBuilder.Entity<Item>()
                 .Property(i => i.Price)
                 .HasPrecision(18, 4);
+            modelBuilder.Entity<Item>()
+                .Property(i => i.City)
+                .HasMaxLength(100);
+
+            modelBuilder.Entity<Item>()
+                .Property(i => i.Category)
+                .HasMaxLength(100);
 
             modelBuilder.Entity<Item>()
                 .HasOne(i => i.Seller)

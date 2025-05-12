@@ -95,6 +95,9 @@ const HomePage = () => {
                                 <p>
                                     <strong>Cena:</strong> {Number(item.price).toFixed(2)} PLN
                                 </p>
+                                <p><strong>Miasto:</strong> {item.city}</p>
+                                <p><strong>Kategoria:</strong> {item.category}</p>
+
                             </div>
                         ))
                     ) : (
